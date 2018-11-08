@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Loader\JsonCardLoader;
+use App\Sorter\Sorter;
 
 class IndexController extends MainController
 {
@@ -14,6 +15,8 @@ class IndexController extends MainController
 
         $cards  = $loader->loadCards($cardsData);
 
-        return view('welcome')->with('cards', $cards);
+        $route  = new Sorter($cards);
+
+        return view('welcome')->with('cards', $route->getOrderedCards());
     }
 }

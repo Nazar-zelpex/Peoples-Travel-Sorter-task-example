@@ -70,6 +70,7 @@
                     <li>{{ $card }}</li>
                 @endforeach
             </ol>
+            <p>You have arrived at your final destination.</p>
         </div>
         <div class="links">
             <a href="https://laravel.com/docs">Documentation</a>
