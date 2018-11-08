@@ -12,15 +12,17 @@ use App\Contracts\Modals\ICard;
 trait CardTrait
 {
     /**
-     * @var
+     * @var Place
      */
     private $fromPlace;
+
     /**
-     * @var
+     * @var Place
      */
     private $toPlace;
+
     /**
-     * @var
+     * @var string
      */
     private $seat;
 
@@ -29,7 +31,7 @@ trait CardTrait
      */
     public function getToPlace(): Place
     {
-
+        return $this->toPlace;
     }
 
     /**
@@ -37,7 +39,15 @@ trait CardTrait
      */
     public function getFromPlace(): Place
     {
+        return $this->fromPlace;
+    }
 
+    /**
+     * @return string
+     */
+    public function getSeat(): string
+    {
+        return $this->seat;
     }
 
     /**
@@ -47,7 +57,7 @@ trait CardTrait
      */
     public function hasFromPlace(ICard $card): bool
     {
-
+        return $this->fromPlace->getName() === $card->getToPlace()->getName();
     }
 
     /**
@@ -57,6 +67,6 @@ trait CardTrait
      */
     public function hasToPlace(ICard $card): bool
     {
-
+        return $this->toPlace->getName() === $card->getFromPlace()->getName();
     }
 }
