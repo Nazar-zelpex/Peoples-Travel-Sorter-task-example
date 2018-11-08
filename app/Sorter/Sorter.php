@@ -5,6 +5,11 @@ namespace App\Sorter;
 use App\Contracts\Modals\ICard;
 use App\Contracts\Sorter\ICardSort;
 
+/**
+ * Class Sorter
+ *
+ * @package App\Sorter
+ */
 class Sorter
 {
     /**

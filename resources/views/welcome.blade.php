@@ -65,8 +65,11 @@
             People’s Travel Sorter
         </div>
         <div>
+            @each('ticket.show', $cards, 'card', 'ticket.empty')
+        </div>
+        <div>
             <ol style="text-align:left">
-                @foreach($cards as $card)
+                @foreach($orderedCards as $card)
                     <li>{{ $card }}</li>
                 @endforeach
             </ol>
